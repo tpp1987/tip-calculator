@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="shortcut icon" href="tp-favicon.png" type="image/png">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+        <title>Tip Calculator</title>
+        <meta name="description" content="Want to know how much to leave as a tip? You've come to the right place!">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+        
+        <header>
+            <h1>Tip Calculator</h1>
+        </header>
+
+        <main>
+            <section id="intro">
+                <h2>Not sure how much to leave as a tip?</h2>
+                <p>We've got you covered.</p>
+            </section>
+            
+            <section id="calc">
+                <form id="calc-form" class="container">
+                    <label>
+                        What's the total bill amount? <input name="totalBill" type="number" placeholder="£">
+                    </label>
+                    <label>How good was the service? 
+                        <select id="service-select" name="select">
+                            <option value="crap">Crap</option>
+                            <option value="notBad">Not bad</option>
+                            <option value="good">Pretty good</option>
+                            <option value="awesome">Awesome</option>
+                        </select>
+                    </label>
+                    <label>
+                        Suggested tip % (feel free to change) <input id="suggested-tip" name="suggestedTip" type="number" placeholder="%" value="0">
+                    </label>
+                    <button id="form-button">Let's get tippin'</button>
+                </form>
+            </section>
+
+            <section id="results">
+
+            </section>
+
+        </main>
+
+        <footer>
+            <p>An app by Tom Parkes</p>
+        </footer>
+
+        <!-- JavaScript -->
+        <script src="scripts/tip-calc.js"></script>
+    </body>
+
+</html>
