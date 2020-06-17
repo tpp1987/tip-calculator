@@ -225,6 +225,16 @@ footer a {
     header {
         padding-bottom: var(--l5-font-size);
     }
+
+    h1 {
+        font-size: var(--l3-font-size);
+        font-weight: 700;
+    }
+
+    h2 {
+        font-size: var(--l1-font-size);
+        font-weight: 700;
+    }
 }
 
 /*==================================================*/
