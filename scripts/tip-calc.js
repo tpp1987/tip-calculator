@@ -63,6 +63,8 @@ document.querySelector("#calc-form").addEventListener("submit", function (e) {
     document.querySelector("#calc").classList.replace("opacity-1", "opacity-0")
 
     document.querySelector("#start-again").addEventListener("click", function (e) {
+        document.querySelector("#results-div").innerHTML = ""
+
         document.querySelector("#results-div").classList.replace("opacity-1", "opacity-0")
         document.querySelector("#calc").classList.replace("opacity-0", "opacity-1")
 
