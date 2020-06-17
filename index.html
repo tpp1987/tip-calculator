@@ -20,31 +20,31 @@
         </header>
 
         <main>
-            <div class="container-narrow" id="calc-grid">                
-                <section id="calc">
-                    <form id="calc-form">
-                        <label for="totalBill">What's the total?</label>
-                            <input name="totalBill" type="number" placeholder="£" step="0.01">
-                        <label for="select">How was the service?</label>
-                            <select id="service-select" name="select">
-                                <option value="crap">Crappy</option>
-                                <option value="notBad">Not bad</option>
-                                <option value="good">Pretty good</option>
-                                <option value="awesome">Awesome</option>
-                            </select>
-                        <label for="suggestedTip">Suggested tip %</label>
-                            <input id="suggested-tip" name="suggestedTip" type="number" placeholder="%" value="0" step="0.1">
-                        
-                        <button id="form-button">Let's get tippin'</button>
-                    </form>
-                </section>
-    
-                <section id="results">
-                    <h2>Awaiting input...</h2>
-                </section>
-            </div>
-            
 
+            <section id="calc" class="container-narrow">
+                <form id="calc-form">
+                    <label for="totalBill">What's the total?</label>
+                        <input name="totalBill" type="number" placeholder="£" step="0.01">
+                    <label for="select">How was the service?</label>
+                        <select id="service-select" name="select">
+                            <option value="crap">Crappy</option>
+                            <option value="notBad">Not bad</option>
+                            <option selected value="good">Pretty good</option>
+                            <option value="awesome">Awesome</option>
+                        </select>
+                    <label for="suggestedTip">Suggested tip %</label>
+                        <input id="suggested-tip" name="suggestedTip" type="number" placeholder="%" value="10" step="0.1">
+                    
+                    <button id="form-button" class="box-shadow">Start tippin'</button>
+                </form>
+            </section>
+            
+            <section id="results">
+                <div id="results-div">
+
+                </div>
+            </section>
+            
         </main>
 
         <footer>
