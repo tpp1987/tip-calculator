@@ -29,13 +29,13 @@ img {
 :root {
     --main-bg-color: #;
     --main-txt-color: #;
-    --primary-color: #;
-    --secondary-color: #;
+    --primary-color: #2E65FE;
+    --secondary-color: #FFB414;
     --tertiary-color: #;
     --light-grey-color: #FAFAFA;
     --dark-grey-color: #424242;
 
-    --container-width: 960px;
+    --container-width: 800px;
 	
 	--default-font-size: 16px;
 	--xs-font-size: 0.64rem;
@@ -56,10 +56,31 @@ body {
     display: grid;
     grid-template-rows: auto 1fr auto;
     padding: 1rem;
+    text-align: center;
+    background-color: #f9f9fa;
 }
 
 .container {
     width: var(--container-width);
+    margin: 0 auto;
+}
+
+.container-narrow {
+    width: 600px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: var(--l5-font-size);
+}
+
+h2 {
+    font-size: var(--l3-font-size);
 }
 
 /*===================================================*/
@@ -68,12 +89,20 @@ body {
 
 /* HEADER ===========================================*/
 
+header {
+    padding-top: var(--l5-font-size);
+    padding-bottom: 5.96rem;
+}
 
+header h2 {
+    margin-top: var(--l1-font-size);
+}
 
-/* INTRO ============================================*/
+/* CALC-GRID ========================================*/
 
-#intro {
-    margin: var(--l3-font-size) 0;
+#calc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 /* CALC =============================================*/
@@ -81,22 +110,51 @@ body {
 #calc-form {
     display: grid;
     row-gap: var(--xs-font-size);
+    width: 205px;
+    text-align: left;
+}
+
+#calc-form input,
+#calc-form select {
+    width: 200px;
+    margin: 0;
+    padding: 1rem;
+    border: 1px solid var(--dark-grey-color);
+    border-radius: var(--xs-font-size);
+    outline: none;
 }
 
 #form-button {
     width: max-content;
-    padding: 0.2rem 1rem;
+    padding: 1rem;
+    margin: var(--l1-font-size) 0 0;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    border-radius: var(--xs-font-size);
+    outline: none;
+    cursor: pointer;
 }
 
 /* RESULTS ==========================================*/
 
 #results {
-    margin-top: var(--l3-font-size);
+    text-align: left;
 }
 
-/* SECTION NAME =====================================*/
+#results h2 {
+    margin-bottom: var(--l1-font-size);
+}
 
+#results p {
+    margin-bottom: 1rem;
+}
 
+/* FOOTER ===========================================*/
+
+footer a {
+    color: var(--secondary-color);
+}
 
 /* SECTION NAME =====================================*/
 

@@ -14,44 +14,41 @@
 
     <body>
         
-        <header>
-            <h1>Tip Calculator</h1>
+        <header class="container">
+            <h1>Not sure how much to leave as a tip?</h1>
+            <h2>This app's got you covered</h2>
         </header>
 
         <main>
-            <section id="intro">
-                <h2>Not sure how much to leave as a tip?</h2>
-                <p>We've got you covered.</p>
-            </section>
+            <div class="container-narrow" id="calc-grid">                
+                <section id="calc">
+                    <form id="calc-form">
+                        <label for="totalBill">What's the total?</label>
+                            <input name="totalBill" type="number" placeholder="£" step="0.01">
+                        <label for="select">How was the service?</label>
+                            <select id="service-select" name="select">
+                                <option value="crap">Crappy</option>
+                                <option value="notBad">Not bad</option>
+                                <option value="good">Pretty good</option>
+                                <option value="awesome">Awesome</option>
+                            </select>
+                        <label for="suggestedTip">Suggested tip %</label>
+                            <input id="suggested-tip" name="suggestedTip" type="number" placeholder="%" value="0" step="0.1">
+                        
+                        <button id="form-button">Let's get tippin'</button>
+                    </form>
+                </section>
+    
+                <section id="results">
+                    <h2>Awaiting input...</h2>
+                </section>
+            </div>
             
-            <section id="calc">
-                <form id="calc-form" class="container">
-                    <label>
-                        What's the total bill amount? <input name="totalBill" type="number" placeholder="£">
-                    </label>
-                    <label>How good was the service? 
-                        <select id="service-select" name="select">
-                            <option value="crap">Crap</option>
-                            <option value="notBad">Not bad</option>
-                            <option value="good">Pretty good</option>
-                            <option value="awesome">Awesome</option>
-                        </select>
-                    </label>
-                    <label>
-                        Suggested tip % (feel free to change) <input id="suggested-tip" name="suggestedTip" type="number" placeholder="%" value="0">
-                    </label>
-                    <button id="form-button">Let's get tippin'</button>
-                </form>
-            </section>
-
-            <section id="results">
-
-            </section>
 
         </main>
 
         <footer>
-            <p>An app by Tom Parkes</p>
+            <p>An app by <a href="https://twitter.com/tomparkes1987" target="_blank">Tom Parkes</a></p>
         </footer>
 
         <!-- JavaScript -->

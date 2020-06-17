@@ -3,11 +3,8 @@ let serviceLevel = ""
 let suggestedTipAmount = 0
 let totalTip = 0
 
-
-
 document.querySelector("#service-select").addEventListener("change", function (e) {
     serviceLevel = e.target.value
-    console.log(serviceLevel)
 
     if (serviceLevel === "crap") {
         document.querySelector("#suggested-tip").value = 0
@@ -20,8 +17,6 @@ document.querySelector("#service-select").addEventListener("change", function (e
     }
 })
 
-
-
 document.querySelector("#calc-form").addEventListener("submit", function (e) {
     e.preventDefault()
 
@@ -29,20 +24,32 @@ document.querySelector("#calc-form").addEventListener("submit", function (e) {
 
     suggestedTipAmount = e.target.elements.suggestedTip.value
 
-    const calculateTip = function () {
-        totalTip = (totalBillAmount * suggestedTipAmount) / 100
-    }
-
-    calculateTip()
-    console.log(totalTip)
+    totalTip = (totalBillAmount * suggestedTipAmount) / 100
 
     document.querySelector("#results").innerHTML = ""
 
-    const newHeading = document.createElement("h2")
-    newHeading.textContent = "The results are in!"
-    document.querySelector("#results").appendChild(newHeading)
+    
 
-    const newParagraph = document.createElement("p")
-    newParagraph.textContent = `With a total bill of £${totalBillAmount}, a ${suggestedTipAmount}% tip would be £${totalTip}`
-    document.querySelector("#results").appendChild(newParagraph)
+    // if service === crappy, print a different message, else print the usual message(s)
+    if (suggestedTipAmount < 0.01) {
+        const newHeading = document.createElement("h2")
+        newHeading.textContent = "Run!"
+        document.querySelector("#results").appendChild(newHeading)
+
+        const noTipParagraph = document.createElement("p")
+        noTipParagraph.textContent = `If the service was that bad, don't even pay the bill!`
+        document.querySelector("#results").appendChild(noTipParagraph)
+    } else {
+        const newHeading = document.createElement("h2")
+        newHeading.textContent = "The results are in!"
+        document.querySelector("#results").appendChild(newHeading)
+
+        let newParagraph = document.createElement("p")
+        newParagraph.textContent = `A ${suggestedTipAmount}% tip is £${Math.ceil(totalTip).toFixed(2)}`
+        document.querySelector("#results").appendChild(newParagraph)
+    
+        newParagraph = document.createElement("p")
+        newParagraph.textContent = `Be cool. We rounded it up for you`
+        document.querySelector("#results").appendChild(newParagraph)
+    }
 })
