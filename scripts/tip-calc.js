@@ -21,35 +21,50 @@ document.querySelector("#calc-form").addEventListener("submit", function (e) {
     e.preventDefault()
 
     totalBillAmount = e.target.elements.totalBill.value
-
     suggestedTipAmount = e.target.elements.suggestedTip.value
 
     totalTip = (totalBillAmount * suggestedTipAmount) / 100
 
-    document.querySelector("#results").innerHTML = ""
+    document.querySelector("#results-div").innerHTML = ""
 
-    
-
-    // if service === crappy, print a different message, else print the usual message(s)
-    if (suggestedTipAmount < 0.01) {
+    if (totalBillAmount == 0 || totalBillAmount === "") {
+    const noBillParagraph = document.createElement("p")
+    noBillParagraph.textContent = `We can't calculate a tip without a total. Come on now.`
+    document.querySelector("#results-div").appendChild(noBillParagraph)
+    } else if (suggestedTipAmount < 0.01) {
         const newHeading = document.createElement("h2")
         newHeading.textContent = "Run!"
-        document.querySelector("#results").appendChild(newHeading)
+        document.querySelector("#results-div").appendChild(newHeading)
 
         const noTipParagraph = document.createElement("p")
         noTipParagraph.textContent = `If the service was that bad, don't even pay the bill!`
-        document.querySelector("#results").appendChild(noTipParagraph)
+        document.querySelector("#results-div").appendChild(noTipParagraph)
     } else {
         const newHeading = document.createElement("h2")
         newHeading.textContent = "The results are in!"
-        document.querySelector("#results").appendChild(newHeading)
+        document.querySelector("#results-div").appendChild(newHeading)
 
         let newParagraph = document.createElement("p")
         newParagraph.textContent = `A ${suggestedTipAmount}% tip is £${Math.ceil(totalTip).toFixed(2)}`
-        document.querySelector("#results").appendChild(newParagraph)
+        document.querySelector("#results-div").appendChild(newParagraph)
     
         newParagraph = document.createElement("p")
         newParagraph.textContent = `Be cool. We rounded it up for you`
-        document.querySelector("#results").appendChild(newParagraph)
+        document.querySelector("#results-div").appendChild(newParagraph)
     }
+
+    const newButton = document.createElement("button")
+    newButton.setAttribute("id", "start-again")
+    newButton.setAttribute("class", "box-shadow")
+    newButton.textContent = `Start again`
+    document.querySelector("#results-div").appendChild(newButton)
+
+    document.querySelector("#results-div").classList.add("opacity-1")
+    document.querySelector("#calc").classList.add("display-none")
+
+    document.querySelector("#start-again").addEventListener("click", function (e) {
+        document.querySelector("#results-div").classList.replace("opacity-1", "opacity-0")
+        document.querySelector("#calc").classList.remove("display-none")
+
+    })
 })

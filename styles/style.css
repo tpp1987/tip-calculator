@@ -31,7 +31,7 @@ img {
     --main-txt-color: #;
     --primary-color: #2E65FE;
     --secondary-color: #FFB414;
-    --tertiary-color: #;
+    --tertiary-color: #1a388d;
     --light-grey-color: #FAFAFA;
     --dark-grey-color: #424242;
 
@@ -83,6 +83,28 @@ h2 {
     font-size: var(--l3-font-size);
 }
 
+.box-shadow {
+    box-shadow:
+        0 1.2px 2.2px rgba(0, 0, 0, 0.02),
+        0 3px 5.3px rgba(0, 0, 0, 0.028),
+        0 5.6px 10px rgba(0, 0, 0, 0.035),
+        0 10.1px 17.9px rgba(0, 0, 0, 0.042),
+        0 18.8px 33.4px rgba(0, 0, 0, 0.05),
+        0 45px 80px rgba(0, 0, 0, 0.07);
+}
+
+.opacity-0 {
+    opacity: 0;
+}
+
+.opacity-1 {
+    opacity: 1;
+}
+
+.display-none {
+    display: none;
+}
+
 /*===================================================*/
 /* SECTIONS =========================================*/
 /*===================================================*/
@@ -98,48 +120,54 @@ header h2 {
     margin-top: var(--l1-font-size);
 }
 
-/* CALC-GRID ========================================*/
-
-#calc-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
 /* CALC =============================================*/
 
 #calc-form {
     display: grid;
     row-gap: var(--xs-font-size);
     width: 205px;
-    text-align: left;
+    margin: 0 auto;
 }
 
 #calc-form input,
 #calc-form select {
     width: 200px;
-    margin: 0;
+    margin: 0 auto;
     padding: 1rem;
     border: 1px solid var(--dark-grey-color);
     border-radius: var(--xs-font-size);
     outline: none;
 }
 
-#form-button {
+#form-button,
+#start-again {
+    font: inherit;
     width: max-content;
     padding: 1rem;
-    margin: var(--l1-font-size) 0 0;
+    margin: var(--l1-font-size) auto 0;
     background-color: var(--primary-color);
     color: #ffffff;
     border: none;
     border-radius: var(--xs-font-size);
     outline: none;
     cursor: pointer;
+    transition: all 0.3s;
+}
+
+#form-button:hover,
+#start-again:hover {
+    background-color: var(--tertiary-color);
 }
 
 /* RESULTS ==========================================*/
 
 #results {
-    text-align: left;
+    /* position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%); */
+    
+    padding: var(--l2-font-size) 1rem;
 }
 
 #results h2 {
@@ -181,8 +209,9 @@ footer a {
         width: 100%;
     }
 
-    
-
+    header {
+        padding-bottom: var(--l5-font-size);
+    }
 }
 
 /*==================================================*/
