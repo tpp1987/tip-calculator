@@ -59,12 +59,12 @@ document.querySelector("#calc-form").addEventListener("submit", function (e) {
     newButton.textContent = `Start again`
     document.querySelector("#results-div").appendChild(newButton)
 
-    document.querySelector("#results-div").classList.add("opacity-1")
-    document.querySelector("#calc").classList.add("display-none")
+    document.querySelector("#results-div").classList.replace("opacity-0", "opacity-1")
+    document.querySelector("#calc").classList.replace("opacity-1", "opacity-0")
 
     document.querySelector("#start-again").addEventListener("click", function (e) {
         document.querySelector("#results-div").classList.replace("opacity-1", "opacity-0")
-        document.querySelector("#calc").classList.remove("display-none")
+        document.querySelector("#calc").classList.replace("opacity-0", "opacity-1")
 
     })
 })

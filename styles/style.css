@@ -122,6 +122,10 @@ header h2 {
 
 /* CALC =============================================*/
 
+#calc {
+    transition: opacity 0.1s;
+}
+
 #calc-form {
     display: grid;
     row-gap: var(--xs-font-size);
@@ -161,13 +165,17 @@ header h2 {
 
 /* RESULTS ==========================================*/
 
-#results {
-    /* position: absolute;
+main {
+    position: relative;
+}
+
+#results-div {
+    position: absolute;
+    top: 0;
     left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%); */
-    
+    transform: translateX(-50%);
     padding: var(--l2-font-size) 1rem;
+    transition: opacity 0.7s;
 }
 
 #results h2 {
@@ -179,6 +187,10 @@ header h2 {
 }
 
 /* FOOTER ===========================================*/
+
+footer {
+    padding-top: var(--l5-font-size);
+}
 
 footer a {
     color: var(--secondary-color);
