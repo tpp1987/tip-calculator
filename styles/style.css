@@ -178,11 +178,11 @@ main {
     transition: opacity 0.7s;
 }
 
-#results h2 {
+#results-div h2 {
     margin-bottom: var(--l1-font-size);
 }
 
-#results p {
+#results-div p {
     margin-bottom: 1rem;
 }
 
